@@ -1,0 +1,98 @@
+/* Layout base */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f6f6;
+}
+
+/* Sidebar só no desktop */
+.sidebar {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Header/Footer só no mobile */
+.header, .footer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 56px;
+    background: #005c2a;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 48px;
+    background: #005c2a;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.08);
+    font-size: 1rem;
+  }
+}
+
+/* Main content: padding para não ficar atrás do header/footer/sidebar */
+.main-content {
+  flex: 1;
+  /* margin-left: 220px; */
+  padding: 32px 16px;
+  min-height: 100vh;
+  background: #f6f6f6;
+  box-sizing: border-box;
+  width: 100vw;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding-top: 64px; /* espaço para header */
+    padding-bottom: 56px; /* espaço para footer */
+  }
+}
+
+/* Botões de navegação */
+.sidebar-link, .header-nav button, .footer button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 6px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.sidebar-link:hover, .header-nav button:hover, .footer button:hover {
+  background: #003d1a;
+}
+
+.header-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
