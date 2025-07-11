@@ -1,62 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import './Sidebar.css';
+import {
+  FaHome,
+  FaSignInAlt,
+  FaUserPlus,
+  FaConciergeBell,
+  FaCalendarAlt,
+  FaUserCircle,
+  FaChartLine,
+  FaEnvelope,
+  FaBars,
+  FaCar
+} from 'react-icons/fa';
 
-const Sidebar = () => (
-  <aside className="sidebar">
-    <h2>Menu</h2>
-    <ul>
-      <li>
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Início</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/login"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Login</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/register"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Cadastro</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/services"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Serviços</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/schedule"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Agendamento</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/profile"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Perfil</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Dashboard/adm</NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/contact"
-          className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}
-        >Contato</NavLink>
-      </li>
-    </ul>
-  </aside>
-);
+const AppSidebar = () => {
+  const [collapsed, setCollapsed] = useState(false);
 
-export default Sidebar;
+  const handleToggle = () => {
+    setCollapsed(!collapsed);
+  };
+
+  return (
+    <Sidebar collapsed={collapsed} breakPoint="md">
+      <Menu>
+        <MenuItem icon={<FaBars />} onClick={handleToggle}>
+          {collapsed ? '' : 'Menu'}
+        </MenuItem>
+        <MenuItem icon={<FaHome />} component={<NavLink to="/" end />}>
+          Início
+        </MenuItem>
+        <MenuItem icon={<FaSignInAlt />} component={<NavLink to="/login" />}>
+          Login
+        </MenuItem>
+        <MenuItem icon={<FaUserPlus />} component={<NavLink to="/register" />}>
+          Cadastro
+        </MenuItem>
+        <MenuItem icon={<FaCar />} component={<NavLink to="/services" />}>
+          Serviços
+        </MenuItem>
+        <MenuItem icon={<FaCalendarAlt />} component={<NavLink to="/schedule" />}>
+          Agendamento
+        </MenuItem>
+        <MenuItem icon={<FaUserCircle />} component={<NavLink to="/profile" />}>
+          Perfil
+        </MenuItem>
+        <MenuItem icon={<FaChartLine />} component={<NavLink to="/dashboard" />}>
+          Dashboard/adm
+        </MenuItem>
+        <MenuItem icon={<FaEnvelope />} component={<NavLink to="/contact" />}>
+          Contato
+        </MenuItem>
+      </Menu>
+    </Sidebar>
+  );
+};
+
+export default AppSidebar;

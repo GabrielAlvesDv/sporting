@@ -1,50 +1,67 @@
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  width: 220px;
+/* Sidebar.css */
+
+.css-dip3t8 {
+  background-color: black !important;
+}
+
+
+/* 1️⃣ Sobrescreve hover e ativo do item completo */
+.pro-sidebar .pro-menu .pro-menu-item:hover>.pro-inner-item,
+.pro-sidebar .pro-menu .pro-menu-item.active>.pro-inner-item {
+  background-color: #afafaf !important;
+}
+
+/* 2️⃣ Ajusta cor dos textos no hover e ativo */
+.pro-sidebar .pro-menu .pro-menu-item:hover .pro-item-content,
+.pro-sidebar .pro-menu .pro-menu-item.active .pro-item-content {
+  color: black !important;
+}
+
+/* 3️⃣ Ajusta cor dos ícones no hover e ativo */
+.pro-sidebar .pro-menu .pro-menu-item:hover .pro-icon-wrapper,
+.pro-sidebar .pro-menu .pro-menu-item.active .pro-icon-wrapper {
+  color: black !important;
+}
+
+/* Corrige largura e altura em telas pequenas */
+.pro-sidebar {
   height: 100vh;
-  background: #005c2a;
+}
+
+.pro-sidebar .pro-menu-item.active {
+  background-color: #2e2e48;
   color: #fff;
-  padding: 24px 12px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
 }
 
-.sidebar h2 {
-  margin-top: 0;
-  margin-bottom: 24px;
-  font-size: 1.2rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 18px;
-}
-
-.sidebar a {
+.pro-sidebar .pro-menu-item.active .pro-icon-wrapper {
   color: #fff;
-  text-decoration: none;
-  font-weight: 500;
 }
 
-.sidebar a.active {
-  background: #fff;
-  color: #005c2a;
+.pro-sidebar .pro-menu-item:hover {
+  background-color: #3a3a5a;
+  color: #fff;
 }
 
-.sidebar-link.active {
-  background: #003d1a;
+.pro-sidebar .pro-menu-item {
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove borda superior do header */
+.pro-sidebar .pro-sidebar-header {
+  border-bottom: none;
+}
+
+/* Header estilo centrado */
+.pro-sidebar .pro-sidebar-header div {
+  color: #fff;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
+/* Estiliza ícones */
+.pro-sidebar .pro-icon-wrapper {
+  color: #cbd5e1;
 }
+
+/* Cor de fundo padrão*

@@ -18,20 +18,22 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <Sidebar />
-        <Header />
-        <Footer />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<HomeContainer />} />
-            <Route path="/login" element={<LoginContainer />} />
-            <Route path="/register" element={<RegisterContainer />} />
-            <Route path="/services" element={<ServicesContainer />} />
-            <Route path="/schedule" element={<ScheduleContainer />} />
-            <Route path="/profile" element={<ProfileContainer />} />
-            <Route path="/dashboard" element={<DashboardContainer />} />
-            <Route path="/contact" element={<ContactContainer />} />
-          </Routes>
-        </main>
+        <div className="content-area">
+          <Header />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<HomeContainer />} />
+              <Route path="/login" element={<LoginContainer />} />
+              <Route path="/register" element={<RegisterContainer />} />
+              <Route path="/services" element={<ServicesContainer />} />
+              <Route path="/schedule" element={<ScheduleContainer />} />
+              <Route path="/profile" element={<ProfileContainer />} />
+              <Route path="/dashboard" element={<DashboardContainer />} />
+              <Route path="/contact" element={<ContactContainer />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );
