@@ -1,0 +1,88 @@
+// Tema escuro para o calendário
+.calendar-dark {
+    background-color: #121212;
+    color: #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    .fc-header-toolbar {
+        color: #ffffff;
+        margin-bottom: 1.5em;
+
+        .fc-button {
+            background-color: #333;
+            border: none;
+            color: #fff;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: #555;
+            }
+
+            &:active {
+                background-color: #222;
+            }
+        }
+    }
+
+    .fc-view-harness {
+        background-color: #1e1e1e;
+        border-radius: 4px;
+    }
+
+    .fc-col-header-cell {
+        background-color: #333;
+        color: #fff;
+        border-color: #444;
+    }
+
+    .fc-daygrid-day {
+        background-color: #252525;
+        border-color: #444;
+    }
+
+    .fc-timegrid-slot {
+        background-color: #252525;
+        border-color: #444 !important;
+        color: #bbb;
+    }
+
+    .fc-event {
+        border: none;
+        font-weight: 500;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .fc-day-today {
+        background-color: #2d2d2d !important;
+    }
+
+    .fc-timegrid-slot.fc-disabled {
+        background-color: #2a2a2a;
+        color: #555;
+        pointer-events: none;
+    }
+    
+}
+
+// Horários específicos
+.fc-day-mon,
+.fc-day-tue,
+.fc-day-wed,
+.fc-day-thu,
+.fc-day-fri {
+    .fc-timegrid-slots .fc-timegrid-slot:not([data-time^="16"]):not([data-time^="17"]):not([data-time^="18"]) {
+        display: none;
+    }
+}
+
+.fc-day-sat {
+    .fc-timegrid-slots .fc-timegrid-slot:not([data-time^="08"]):not([data-time^="09"]):not([data-time^="10"]):not([data-time^="11"]):not([data-time^="12"]) {
+        display: none;
+    }
+}
+
+.fc-day-sun {
+    display: none !important;
+}
