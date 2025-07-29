@@ -1,26 +1,15 @@
 /* Sidebar.css */
 
 .css-dip3t8 {
+  background-color: #545454 !important;
+}
+
+.css-1wvake5 {
+  border-color: red !important;
+}
+
+.css-1t8x7v1 >.ps-menu-button:hover{
   background-color: black !important;
-}
-
-
-/* 1️⃣ Sobrescreve hover e ativo do item completo */
-.pro-sidebar .pro-menu .pro-menu-item:hover>.pro-inner-item,
-.pro-sidebar .pro-menu .pro-menu-item.active>.pro-inner-item {
-  background-color: #afafaf !important;
-}
-
-/* 2️⃣ Ajusta cor dos textos no hover e ativo */
-.pro-sidebar .pro-menu .pro-menu-item:hover .pro-item-content,
-.pro-sidebar .pro-menu .pro-menu-item.active .pro-item-content {
-  color: black !important;
-}
-
-/* 3️⃣ Ajusta cor dos ícones no hover e ativo */
-.pro-sidebar .pro-menu .pro-menu-item:hover .pro-icon-wrapper,
-.pro-sidebar .pro-menu .pro-menu-item.active .pro-icon-wrapper {
-  color: black !important;
 }
 
 /* Corrige largura e altura em telas pequenas */
@@ -29,7 +18,7 @@
 }
 
 .pro-sidebar .pro-menu-item.active {
-  background-color: #2e2e48;
+  background-color: black;
   color: #fff;
 }
 
@@ -38,7 +27,7 @@
 }
 
 .pro-sidebar .pro-menu-item:hover {
-  background-color: #3a3a5a;
+  background-color: black;
   color: #fff;
 }
 
@@ -55,7 +44,7 @@
 
 /* Header estilo centrado */
 .pro-sidebar .pro-sidebar-header div {
-  color: #fff;
+  color: black;
   font-weight: bold;
 }
 

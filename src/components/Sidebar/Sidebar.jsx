@@ -31,12 +31,12 @@ const AppSidebar = () => {
         <MenuItem icon={<FaHome />} component={<NavLink to="/" end />}>
           Início
         </MenuItem>
-        <MenuItem icon={<FaSignInAlt />} component={<NavLink to="/login" />}>
+        {/* <MenuItem icon={<FaSignInAlt />} component={<NavLink to="/login" />}>
           Login
         </MenuItem>
         <MenuItem icon={<FaUserPlus />} component={<NavLink to="/register" />}>
           Cadastro
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem icon={<FaCar />} component={<NavLink to="/services" />}>
           Serviços
         </MenuItem>
